@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+</head>
+
+<body>
+    <p id='TV'></p>
+    <h1> Từ điển </h1>
+    <form name="TD">
+        <p>Từ cần dịch <input type="text" id="TA"></p>
+
+        <input type="button" onclick="dichtu()" value="translate">
+        <p id="TV"></p>
+    </form>
+    <script>
+
+
+        let kq = document.getElementById("TV");
+        function dichtu() {
+
+            let anh = ['Apple', 'Orange', 'Banana', 'Mango' ];
+            let viet = ['Táo', 'Cam', 'Chuối', 'Xoài' ];
+            let arr = document.getElementById("TA").value;
+            let i = 0;
+            let position = true;
+            for (i = 0; i < anh.length; i++) {
+                if (arr === anh[i]) {
+                    kq.innerHTML = viet[i];
+                    position = false;
+                   
+
+                }
+            }
+            if (position) {
+                kq.innerHTML = ('không có kết quả')
+            }
+        }
+    </script>
+</body>
+
+</html>
